@@ -11,6 +11,8 @@ module Syobocalite
   # @param end_at [Time]
   #
   # @return [Array<Program>]
+  #
+  # @see https://sites.google.com/site/syobocal/spec/cal_chk-php
   def self.search(start_at:, end_at:)
     xml = fetch(start_at: start_at, end_at: end_at)
     response = MultiXml.parse(xml)
