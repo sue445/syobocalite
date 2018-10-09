@@ -44,38 +44,68 @@ module Syobocalite
     #   @return [String]
     attr_accessor :prog_comment
 
-    # @param attrs [Hash]
-    def initialize(attrs = {})
-      @pid          = attrs["PID"]&.to_i
-      @tid          = attrs["TID"]&.to_i
-      @st_time      = to_time(attrs["StTime"])
-      @ed_time      = to_time(attrs["EdTime"])
-      @ch_name      = attrs["ChName"]
-      @ch_id        = attrs["ChID"]&.to_i
-      @count        = attrs["Count"]&.to_i
-      @st_offset    = attrs["StOffset"]&.to_i
-      @sub_title    = sanitize_text(attrs["SubTitle"])
-      @title        = sanitize_text(attrs["Title"])
-      @prog_comment = attrs["ProgComment"]&.gsub(/^!/, "")
+    # @param pid          [Integer]
+    # @param tid          [Integer]
+    # @param st_time      [TimeWithZone]
+    # @param ed_time      [TimeWithZone]
+    # @param ch_name      [String]
+    # @param ch_id        [Integer]
+    # @param count        [Integer]
+    # @param st_offset    [Integer]
+    # @param sub_title    [String]
+    # @param title        [String]
+    # @param prog_comment [String]
+    def initialize(pid: nil, tid: nil, st_time: nil, ed_time: nil, ch_name: nil, ch_id: nil,
+                   count: nil, st_offset: nil, sub_title: nil, title: nil, prog_comment: nil)
+      @pid          = pid
+      @tid          = tid
+      @st_time      = st_time
+      @ed_time      = ed_time
+      @ch_name      = ch_name
+      @ch_id        = ch_id
+      @count        = count
+      @st_offset    = st_offset
+      @sub_title    = sub_title
+      @title        = title
+      @prog_comment = prog_comment
     end
 
     alias_method :story_number,  :count
     alias_method :story_number=, :count=
 
-    private
+    # @param attrs [Hash]
+    #
+    # @return [Syobocalite::Program]
+    def self.from_prog_item(attrs = {})
+      Syobocalite::Program.new(
+        pid:          attrs["PID"]&.to_i,
+        tid:          attrs["TID"]&.to_i,
+        st_time:      to_time(attrs["StTime"]),
+        ed_time:      to_time(attrs["EdTime"]),
+        ch_name:      attrs["ChName"],
+        ch_id:        attrs["ChID"]&.to_i,
+        count:        attrs["Count"]&.to_i,
+        st_offset:    attrs["StOffset"]&.to_i,
+        sub_title:    sanitize_text(attrs["SubTitle"]),
+        title:        sanitize_text(attrs["Title"]),
+        prog_comment: attrs["ProgComment"]&.gsub(/^!/, ""),
+      )
+    end
 
-    def to_time(str)
+    def self.to_time(str)
       return nil unless str
 
       Time.use_zone("Tokyo") do
         Time.zone.parse(str)
       end
     end
+    private_class_method :to_time
 
-    def sanitize_text(str)
+    def self.sanitize_text(str)
       return nil unless str
 
       CGI.unescapeHTML(str)
     end
+    private_class_method :sanitize_text
   end
 end

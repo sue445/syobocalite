@@ -18,7 +18,7 @@ module Syobocalite
     response = MultiXml.parse(xml)
     prog_items = response["syobocal"]["ProgItems"]["ProgItem"]
 
-    programs = prog_items.map { |prog_item| Syobocalite::Program.new(prog_item) }
+    programs = prog_items.map { |prog_item| Syobocalite::Program.from_prog_item(prog_item) }
 
     programs.select do |program|
       (start_at...end_at).cover?(program.st_time)
