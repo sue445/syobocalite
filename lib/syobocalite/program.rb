@@ -1,6 +1,48 @@
 module Syobocalite
   class Program
-    attr_accessor :pid, :tid, :st_time, :ed_time, :ch_name, :ch_id, :count, :st_offset, :sub_title, :title, :prog_comment
+    # @!attribute pid
+    #   @return [Integer]
+    attr_accessor :pid
+
+    # @!attribute tid
+    #   @return [Integer]
+    attr_accessor :tid
+
+    # @!attribute st_time
+    #   @return [TimeWithZone]
+    attr_accessor :st_time
+
+    # @!attribute ed_time
+    #   @return [TimeWithZone]
+    attr_accessor :ed_time
+
+    # @!attribute ch_name
+    #   @return [String]
+    attr_accessor :ch_name
+
+    # @!attribute ch_id
+    #   @return [Integer]
+    attr_accessor :ch_id
+
+    # @!attribute count
+    #   @return [Integer]
+    attr_accessor :count
+
+    # @!attribute st_offset
+    #   @return [Integer]
+    attr_accessor :st_offset
+
+    # @!attribute sub_title
+    #   @return [String]
+    attr_accessor :sub_title
+
+    # @!attribute title
+    #   @return [String]
+    attr_accessor :title
+
+    # @!attribute prog_comment
+    #   @return [String]
+    attr_accessor :prog_comment
 
     # @param attrs [Hash]
     def initialize(attrs = {})
