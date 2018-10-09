@@ -35,7 +35,11 @@ module Syobocalite
       params[:start] = (start_at - 1.day).strftime("%Y-%m-%d")
     end
 
-    open("http://cal.syoboi.jp/cal_chk.php?#{params.to_param}").read
+    headers = {
+      "User-Agent" => "Syobocalite v#{Syobocalite::VERSION}",
+    }
+
+    open("http://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
   end
   private_class_method :fetch
 end
