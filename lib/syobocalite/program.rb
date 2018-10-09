@@ -1,6 +1,6 @@
 module Syobocalite
   class Program
-    attr_accessor :pid, :tid, :st_time, :ed_time, :ch_name, :ch_id, :story_number, :st_offset, :sub_title, :title, :prog_comment
+    attr_accessor :pid, :tid, :st_time, :ed_time, :ch_name, :ch_id, :count, :st_offset, :sub_title, :title, :prog_comment
 
     # @param attrs [Hash]
     def initialize(attrs = {})
@@ -10,12 +10,15 @@ module Syobocalite
       @ed_time      = to_time(attrs["EdTime"])
       @ch_name      = attrs["ChName"]
       @ch_id        = attrs["ChID"]&.to_i
-      @story_number = attrs["Count"]&.to_i
+      @count        = attrs["Count"]&.to_i
       @st_offset    = attrs["StOffset"]&.to_i
       @sub_title    = sanitize_text(attrs["SubTitle"])
       @title        = sanitize_text(attrs["Title"])
       @prog_comment = attrs["ProgComment"]&.gsub(/^!/, "")
     end
+
+    alias_method :story_number,  :count
+    alias_method :story_number=, :count=
 
     private
 
