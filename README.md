@@ -1,8 +1,6 @@
 # Syobocalite
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/syobocalite`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Lite client for [Syoboi calendar](http://cal.syoboi.jp/) API.
 
 [![Build Status](https://travis-ci.org/sue445/syobocalite.svg?branch=master)](https://travis-ci.org/sue445/syobocalite)
 [![Coverage Status](https://coveralls.io/repos/github/sue445/syobocalite/badge.svg?branch=master)](https://coveralls.io/github/sue445/syobocalite?branch=master)
@@ -26,7 +24,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "syobocalite"
+require "time"
+
+start_at = Time.parse("2018-10-07 08:30:00")
+end_at   = Time.parse("2018-10-07 09:00:00")
+
+# or
+
+Time.zone = "Tokyo"
+start_at = Time.zone.parse("2018-10-07 08:30:00")
+end_at   = Time.zone.parse("2018-10-07 09:00:00")
+
+# Get programs that start between 8:30 and 9:00
+Syobocalite.search(start_at: start_at, end_at: end_at)
+```
+
+`Syobocalite.search` returns `Array` of [`Syobocalite::Program`](lib/syobocalite/program.rb)
 
 ## Development
 
@@ -36,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/syobocalite.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sue445/syobocalite.
 
 ## License
 
