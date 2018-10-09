@@ -1,3 +1,15 @@
+if ENV["CI"]
+  require "simplecov"
+  require "coveralls"
+
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+  SimpleCov.start do
+    %w[spec].each do |ignore_path|
+      add_filter(ignore_path)
+    end
+  end
+end
+
 require "bundler/setup"
 require "syobocalite"
 require "webmock/rspec"
@@ -5,6 +17,8 @@ require "rspec/its"
 require "pry"
 
 Dir["#{__dir__}/support/**/*.rb"].each {|f| require f }
+
+Time.zone = "Tokyo"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

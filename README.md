@@ -4,6 +4,10 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 TODO: Delete this and the text above, and describe your gem
 
+[![Build Status](https://travis-ci.org/sue445/syobocalite.svg?branch=master)](https://travis-ci.org/sue445/syobocalite)
+[![Coverage Status](https://coveralls.io/repos/github/sue445/syobocalite/badge.svg?branch=master)](https://coveralls.io/github/sue445/syobocalite?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9f77793acf8d5c24886e/maintainability)](https://codeclimate.com/github/sue445/syobocalite/maintainability)
+
 ## Installation
 
 Add this line to your application's Gemfile:
