@@ -44,6 +44,11 @@ Syobocalite.search(start_at: start_at, end_at: end_at)
 
 `Syobocalite.search` returns `Array` of [`Syobocalite::Program`](lib/syobocalite/program.rb)
 
+## vs. [syobocal](https://github.com/xmisao/syobocal)
+* Supports only `http://cal.syoboi.jp/cal_chk.php`
+* Supports `Time` and [`ActiveSupport::TimeWithZone`](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
+* Returns array of PORO (NOT array of `Hash`)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
