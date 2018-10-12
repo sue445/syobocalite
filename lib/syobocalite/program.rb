@@ -9,11 +9,11 @@ module Syobocalite
     attr_accessor :tid
 
     # @!attribute st_time
-    #   @return [TimeWithZone]
+    #   @return [ActiveSupport::TimeWithZone]
     attr_accessor :st_time
 
     # @!attribute ed_time
-    #   @return [TimeWithZone]
+    #   @return [ActiveSupport::TimeWithZone]
     attr_accessor :ed_time
 
     # @!attribute ch_name
@@ -46,8 +46,8 @@ module Syobocalite
 
     # @param pid          [Integer]
     # @param tid          [Integer]
-    # @param st_time      [TimeWithZone]
-    # @param ed_time      [TimeWithZone]
+    # @param st_time      [ActiveSupport::TimeWithZone]
+    # @param ed_time      [ActiveSupport::TimeWithZone]
     # @param ch_name      [String]
     # @param ch_id        [Integer]
     # @param count        [Integer]
