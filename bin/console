@@ -10,5 +10,25 @@ require "syobocalite"
 # require "pry"
 # Pry.start
 
+class Syobocalite::Program
+  def to_fixture
+    <<~RUBY
+      Syobocalite::Program.new(
+        pid:          #{pid},
+        tid:          #{tid},
+        st_time:      "#{st_time.strftime("%Y-%m-%d %H:%M:%S")}".in_time_zone,
+        ed_time:      "#{ed_time.strftime("%Y-%m-%d %H:%M:%S")}".in_time_zone,
+        ch_name:      "#{ch_name}",
+        ch_id:        #{ch_id},
+        count:        #{count},
+        st_offset:    #{st_offset},
+        sub_title:    "#{sub_title}",
+        title:        "#{title}",
+        prog_comment: "#{prog_comment}",
+      )
+    RUBY
+  end
+end
+
 require "irb"
 IRB.start(__FILE__)
