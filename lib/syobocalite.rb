@@ -41,7 +41,7 @@ module Syobocalite
       "User-Agent" => "Syobocalite v#{Syobocalite::VERSION}",
     }
 
-    open("http://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
+    URI.open("http://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
   end
   private_class_method :fetch
 end
