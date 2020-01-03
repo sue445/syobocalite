@@ -4,7 +4,7 @@
 ## 1.0.0
 [full changelog](https://github.com/sue445/syobocalite/compare/v0.1.1...v1.0.0)
 
-### BREAKING CHANGES :bomb
+### BREAKING CHANGES :bomb:
 * Drop support ruby 2.3 and 2.4
   * https://github.com/sue445/syobocalite/pull/14
 
