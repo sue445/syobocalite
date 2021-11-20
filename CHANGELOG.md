@@ -1,5 +1,11 @@
 ## master
-[full changelog](https://github.com/sue445/syobocalite/compare/v1.0.0...master)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.0.1...master)
+
+## 1.0.1
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.0.0...v1.0.1)
+
+* Enable MFA requirement for gem releasing
+  * https://github.com/sue445/syobocalite/pull/24
 
 ## 1.0.0
 [full changelog](https://github.com/sue445/syobocalite/compare/v0.1.1...v1.0.0)
