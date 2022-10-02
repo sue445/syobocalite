@@ -42,11 +42,11 @@ end_at   = Time.zone.parse("2018-10-07 09:00:00")
 Syobocalite.search(start_at: start_at, end_at: end_at)
 ```
 
-`Syobocalite.search` returns `Array` of [`Syobocalite::Program`](lib/syobocalite/program.rb)
+`Syobocalite.search` returns `Array` of [Syobocalite::Program](lib/syobocalite/program.rb)
 
 ## vs. [syobocal](https://github.com/xmisao/syobocal)
 * Supports only `http://cal.syoboi.jp/cal_chk.php`
-* Supports `Time` and [`ActiveSupport::TimeWithZone`](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
+* Supports `Time` and [ActiveSupport::TimeWithZone](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
 * Returns array of PORO (NOT array of `Hash`)
 
 ## Development
