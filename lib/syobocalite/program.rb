@@ -73,6 +73,41 @@ module Syobocalite
     alias_method :story_number,  :count
     alias_method :story_number=, :count=
 
+    # Get program's flag
+    # @return [Integer]
+    # @see https://docs.cal.syoboi.jp/spec/proginfo-flag/
+    def flag
+      @flag ||= Syobocalite::DbClient.new.get_program_flag(tid: tid, pid: pid)
+    end
+
+    # Whether contains remark
+    # @return [Boolean]
+    # @see https://docs.cal.syoboi.jp/spec/proginfo-flag/
+    def remark?
+      flag & 0x01 != 0
+    end
+
+    # Whether new program
+    # @return [Boolean]
+    # @see https://docs.cal.syoboi.jp/spec/proginfo-flag/
+    def new?
+      flag & 0x02 != 0
+    end
+
+    # Whether final program
+    # @return [Boolean]
+    # @see https://docs.cal.syoboi.jp/spec/proginfo-flag/
+    def final?
+      flag & 0x04 != 0
+    end
+
+    # Whether re-air program
+    # @return [Boolean]
+    # @see https://docs.cal.syoboi.jp/spec/proginfo-flag/
+    def re_air?
+      flag & 0x08 != 0
+    end
+
     # @param attrs [Hash]
     #
     # @return [Syobocalite::Program]
