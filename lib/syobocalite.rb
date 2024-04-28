@@ -1,5 +1,6 @@
 require "syobocalite/version"
 require "syobocalite/program"
+require "syobocalite/db_client"
 require "active_support/all"
 require "multi_xml"
 require "open-uri"
@@ -25,6 +26,11 @@ module Syobocalite
     end
   end
 
+  # @return [String]
+  def self.user_agent
+    "Syobocalite v#{Syobocalite::VERSION}"
+  end
+
   def self.fetch(start_at:, end_at:)
     params = {}
 
@@ -38,7 +44,7 @@ module Syobocalite
     end
 
     headers = {
-      "User-Agent" => "Syobocalite v#{Syobocalite::VERSION}",
+      "User-Agent" => user_agent,
     }
 
     URI.open("http://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
