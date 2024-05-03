@@ -28,7 +28,7 @@ module Syobocalite
 
   # @return [String]
   def self.user_agent
-    "Syobocalite v#{Syobocalite::VERSION}"
+    "Syobocalite v#{Syobocalite::VERSION} (+https://github.com/sue445/syobocalite)"
   end
 
   def self.fetch(start_at:, end_at:)
