@@ -1,5 +1,15 @@
 ## master
-[full changelog](https://github.com/sue445/syobocalite/compare/v1.1.0...master)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.1.1...master)
+
+## 1.1.1
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.1.0...v1.1.1)
+
+* Remove duplicated `required_ruby_version`
+  * https://github.com/sue445/syobocalite/pull/42
+* Use https://cal.syoboi.jp instead of http://cal.syoboi.jp
+  * https://github.com/sue445/syobocalite/pull/43
+* Tweak User-Agent format
+  * https://github.com/sue445/syobocalite/pull/44
 
 ## 1.1.0
 [full changelog](https://github.com/sue445/syobocalite/compare/v1.0.1...v1.1.0)
