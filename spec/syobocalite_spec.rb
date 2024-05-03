@@ -3,10 +3,10 @@ RSpec.describe Syobocalite do
     subject(:programs) { Syobocalite.search(start_at: start_at, end_at: end_at) }
 
     before do
-      stub_request(:get, "http://cal.syoboi.jp/cal_chk.php?days=1&start=2017-05-07").
+      stub_request(:get, "https://cal.syoboi.jp/cal_chk.php?days=1&start=2017-05-07").
         to_return(status: 200, body: fixture("cal_chk_20170507.xml"))
 
-      stub_request(:get, "http://cal.syoboi.jp/cal_chk.php?days=2&start=2017-05-06").
+      stub_request(:get, "https://cal.syoboi.jp/cal_chk.php?days=2&start=2017-05-06").
         to_return(status: 200, body: fixture("cal_chk_20170506-20170507.xml"))
     end
 
@@ -50,7 +50,7 @@ RSpec.describe Syobocalite do
 
     context "contains html entity" do
       before do
-        stub_request(:get, "http://cal.syoboi.jp/cal_chk.php?days=1&start=2018-05-02").
+        stub_request(:get, "https://cal.syoboi.jp/cal_chk.php?days=1&start=2018-05-02").
           to_return(status: 200, body: fixture("cal_chk_20180502.xml"))
       end
 
