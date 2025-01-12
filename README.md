@@ -3,7 +3,7 @@
 Lite client for [Syoboi calendar](http://cal.syoboi.jp/) API.
 
 [![Gem Version](https://badge.fury.io/rb/syobocalite.svg)](https://badge.fury.io/rb/syobocalite)
-[![Build Status](https://github.com/sue445/syobocalite/workflows/test/badge.svg?branch=master)](https://github.com/sue445/syobocalite/actions?query=workflow%3Atest)
+[![test](https://github.com/sue445/syobocalite/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/syobocalite/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/sue445/syobocalite/badge.svg?branch=master)](https://coveralls.io/github/sue445/syobocalite?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9f77793acf8d5c24886e/maintainability)](https://codeclimate.com/github/sue445/syobocalite/maintainability)
 
