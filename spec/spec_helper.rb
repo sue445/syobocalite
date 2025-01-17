@@ -18,7 +18,6 @@ require "logger"
 require "syobocalite"
 require "webmock/rspec"
 require "rspec/its"
-require "pry"
 
 Dir["#{__dir__}/support/**/*.rb"].each {|f| require f }
 
