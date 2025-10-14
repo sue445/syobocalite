@@ -19,7 +19,9 @@ module Syobocalite
         "User-Agent" => Syobocalite.user_agent,
       }
 
-      xml = URI.open("https://cal.syoboi.jp/db.php?#{params.to_param}", headers).read
+      xml = Syobocalite.with_retry do
+        URI.open("https://cal.syoboi.jp/db.php?#{params.to_param}", headers).read
+      end
       response = MultiXml.parse(xml)
       response["ProgLookupResponse"]["ProgItems"]["ProgItem"]["Flag"].to_i
     end

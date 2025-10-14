@@ -47,7 +47,29 @@ module Syobocalite
       "User-Agent" => user_agent,
     }
 
-    URI.open("https://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
+    with_retry do
+      URI.open("https://cal.syoboi.jp/cal_chk.php?#{params.to_param}", headers).read
+    end
   end
   private_class_method :fetch
+
+  MAX_RETRY_COUNT = 10
+
+  def self.with_retry
+    retry_count ||= 0
+    yield
+  rescue OpenURI::HTTPError => error
+    status_code = error.io.status[0].to_i
+    raise error unless status_code == 429
+
+    retry_count += 1
+    raise error if retry_count > MAX_RETRY_COUNT
+
+    # 1, 2, 4, 8, 16 ...
+    sleep_time = 2 ** (retry_count - 1)
+
+    sleep sleep_time
+
+    retry
+  end
 end
