@@ -1,5 +1,12 @@
 ## master
-[full changelog](https://github.com/sue445/syobocalite/compare/v1.1.1...master)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.0...master)
+
+## [1.2.0](https://github.com/sue445/syobocalite/releases/tag/v1.2.0)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.1.1...v1.2.0)
+
+* Retry when 429 error
+  * https://github.com/sue445/syobocalite/pull/53
+  * https://github.com/sue445/syobocalite/issues/52
 
 ## 1.1.1
 [full changelog](https://github.com/sue445/syobocalite/compare/v1.1.0...v1.1.1)
