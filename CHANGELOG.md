@@ -1,5 +1,11 @@
 ## master
-[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.0...master)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.1...master)
+
+## [1.2.1](https://github.com/sue445/syobocalite/releases/tag/v1.2.1)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.0...v1.2.1)
+
+* Release gem from GitHub Actions
+  * https://github.com/sue445/syobocalite/pull/55
 
 ## [1.2.0](https://github.com/sue445/syobocalite/releases/tag/v1.2.0)
 [full changelog](https://github.com/sue445/syobocalite/compare/v1.1.1...v1.2.0)
