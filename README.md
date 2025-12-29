@@ -5,7 +5,7 @@ Lite client for [Syoboi calendar](http://cal.syoboi.jp/) API.
 [![Gem Version](https://badge.fury.io/rb/syobocalite.svg)](https://badge.fury.io/rb/syobocalite)
 [![test](https://github.com/sue445/syobocalite/actions/workflows/test.yml/badge.svg)](https://github.com/sue445/syobocalite/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/sue445/syobocalite/badge.svg?branch=master)](https://coveralls.io/github/sue445/syobocalite?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9f77793acf8d5c24886e/maintainability)](https://codeclimate.com/github/sue445/syobocalite/maintainability)
+[![Maintainability](https://qlty.sh/gh/sue445/projects/syobocalite/maintainability.svg)](https://qlty.sh/gh/sue445/projects/syobocalite)
 
 ## Installation
 
