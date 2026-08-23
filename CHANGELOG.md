@@ -1,5 +1,11 @@
 ## master
-[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.1...master)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.2...master)
+
+## [1.2.2](https://github.com/sue445/syobocalite/releases/tag/v1.2.2)
+[full changelog](https://github.com/sue445/syobocalite/compare/v1.2.1...v1.2.2)
+
+* Migrate release_gem workflow to sue445/workflows (Also testing the gem release)
+  * https://github.com/sue445/syobocalite/pull/97
 
 ## [1.2.1](https://github.com/sue445/syobocalite/releases/tag/v1.2.1)
 [full changelog](https://github.com/sue445/syobocalite/compare/v1.2.0...v1.2.1)
